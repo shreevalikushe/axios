@@ -19,6 +19,16 @@
       "id": "e6d2de21-d024-4a4c-9af0-78e26e29cb26",
       "title": "Learn Javascript2",
       "status": false
+    },
+    {
+      "id": "24137e33-db4b-4e9d-a2c3-1b64c74d5b4c",
+      "title": "Learn React",
+      "status": false
+    },
+    {
+      "id": "1b3e741f-3cdf-4ca8-8089-d631387b494a",
+      "title": "Learn basics of styling",
+      "status": false
     }
   ]
 }

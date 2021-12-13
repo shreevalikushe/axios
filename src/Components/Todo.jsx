@@ -46,7 +46,18 @@ function Todo() {
         console.log(err);
       });
   }, []);
-
+  const deleteTask = (e) => {
+    const deleteTask = todo.filter((item) => item.id !== e);
+    // console.log(deleteTask);
+    setTodo(deleteTask);
+  };
+  const toggleTask = (e) => {
+    const toggleTask = todo.map((item) =>
+      item.id === e ? { ...item, status: !item.status } : item
+    );
+    setTodo(toggleTask);
+    // console.log(toggleTask);
+  };
   return (
     <>
       <>
@@ -54,10 +65,34 @@ function Todo() {
         <TodoInput onSubmit={onSubmit} />
         {todo.map((item) => {
           return (
-            <div key={item.id}>
+            <div
+              key={item.id}
+              style={{
+                display: "flex",
+                flexDirection: "row",
+                margin: "auto",
+                width: "400px",
+                border: "1px solid black",
+                marginTop: "1rem",
+                padding: "0.5rem",
+                backgroundColor: "red",
+              }}
+            >
               <h3>
                 {item.title}- {item.status ? "DONE" : "NOT DONE"}
               </h3>
+              <button
+                style={{ height: "5%" }}
+                onClick={() => deleteTask(item.id)}
+              >
+                Delete task
+              </button>
+              <button
+                style={{ height: "5%" }}
+                onClick={() => toggleTask(item.id)}
+              >
+                Toggle Status
+              </button>
             </div>
           );
         })}
